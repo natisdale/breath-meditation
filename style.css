@@ -91,7 +91,7 @@
       background-color: var(--brandPurple);
       color: white;
     }
-    .countrolBar__button--sound {
+    .controlBar__button--sound {
       background-color: var(--brandSea);
       border: none;
     }
@@ -108,7 +108,7 @@
       font-size: 2rem;
     }
     figcaption {
-      font-size: 2rem;
+      font-size: 1.75rem;
     }
   }
 }
