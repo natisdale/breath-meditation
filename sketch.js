@@ -35,6 +35,9 @@ function draw() {
 
 function togglePlay() {
   visual.toggleActive();
+  if (visual.isActive() && !visual.started()) {
+    visual.advancePrompt();
+  }
   if (visual.isActive()) {
     playButton.innerHTML =
       '<span class="material-symbols-outlined" aria-label="Pause">pause</span>';

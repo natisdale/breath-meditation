@@ -95,6 +95,10 @@ class Torso {
     return this._active;
   }
 
+  started() {
+    return this._prompt > 0;
+  }
+
   toggleSound() {
     this._soundEnabled = !this._soundEnabled;
     if (visual.soundIsEnabled()) {
@@ -144,22 +148,25 @@ class Torso {
       '<span class="material-symbols-outlined" aria-label="Play">play_arrow</span>';
   }
 
+  advancePrompt() {
+    this._prompt++;
+    if (this.soundIsEnabled()) {
+      soundFormats("mp3");
+      this._currentTrack = loadSound(
+        this._soundFiles[this._prompt],
+        () => this._currentTrack.play(),
+        () => console.log(`Error loading ${this._soundFiles[this._prompt]}`),
+        (n) => console.log(n),
+      );
+    }
+  }
+
   show() {
     if (this._active) {
       // prompt progression and sound playback
       if (this._diaphram > 99 || this._diaphram < 0) {
         if (!this._inhaling && this._prompt < this._prompts.length - 1) {
-          this._prompt++;
-          if (this.soundIsEnabled()) {
-            soundFormats("mp3");
-            this._currentTrack = loadSound(
-              this._soundFiles[this._prompt],
-              () => this._currentTrack.play(),
-              () =>
-                console.log(`Error loading ${this._soundFiles[this._prompt]}`),
-              (n) => console.log(n),
-            );
-          }
+          this.advancePrompt();
         } else if (
           !this._inhaling &&
           this._prompt >= this._prompts.length - 1
