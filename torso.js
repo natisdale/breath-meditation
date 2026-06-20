@@ -27,12 +27,12 @@ class Torso {
       "Rest your attention on the breath, wherever you most feel it in your body at this moment",
       "Begin to notice how the air feels as you inhale and exhale.",
       "Just noticing, without attempting to change your breathing in any way, does it feel slow, or fast?",
-      "Does it feel warm, or cool?",
-      "Does it feel dry, or moist?",
+      "Does it feel warm, or cool?", // plays the previus
+      "Does it feel dry, or moist?", // plays the previus
       "Is it rough or smooth?",
-      "Follow the inhalation.",
+      "Follow the inhalation.", // dry or moist
       "And Follow the  exhalation.",
-      "Notice the moment between, before the breath changes direction",
+      "Notice the moment between, before the breath changes direction", // plays follow...
       "The moment at the top of the breath.",
       "And the moment at the bottom of the breath.",
       "Continue to follow the rise and fall of the breath.",
@@ -57,10 +57,9 @@ class Torso {
       "audio/english-breath-09",
       "audio/english-breath-10",
       "audio/english-breath-11",
-      "audio/english-breath-11",
       "audio/english-breath-12",
       "audio/english-breath-13",
-      "audio/english-breath-13",
+      "audio/english-breath-14",
       "audio/english-breath-15",
       "audio/english-breath-16",
       "audio/english-breath-17",
