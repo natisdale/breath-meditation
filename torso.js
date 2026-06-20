@@ -343,6 +343,16 @@ class Torso {
       // highlight diaphram
       ellipse(500, 875, 400, 150);
     }
+
+    // progress indicator
+    stroke(255, 255, 55, 90);
+    strokeWeight(10);
+    line(
+      100,
+      995,
+      100 + (800 * this._prompt) / (this._prompts.length - 1),
+      995,
+    );
     pop();
   }
 }
