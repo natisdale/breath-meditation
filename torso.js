@@ -12,7 +12,7 @@ class Torso {
     this._prompt = 0;
     this._breathR = 170;
     this._breathG = 204;
-    this._breathB = 190;
+    this._breathB = 214;
     this._breathColor = color(this._breathR, this._breathG, this._breathB);
     this._prompts = [
       "Following the breath is one of the most accessbile ways to practice meditation, while sitting, standing, or even laying down. This short guided meditation is approximately four minutes. Find a space where you can be uninterupted for the duration of the meditation. Eyes may be closed or open, whichever you find feels comfortable and safe.  If sitting in a chair, sitting on the front half of the chair helps allow the belly to expand fully.  After settling into whichever position you choose press the start button to begin.",
@@ -132,15 +132,21 @@ class Torso {
     this._prompt = 0;
     this._diaphram = 0;
     this._inhaling = true;
+    this._breathR = 170;
+    this._breathG = 204;
+    this._breathB = 214;
+    this._breathColor = color(this._breathR, this._breathG, this._breathB);
     stopButton.style.display = "none";
-    this._breathB = 190;
     if (this._currentTrack && this._currentTrack.isPlaying()) {
       this._currentTrack.stop();
     }
+    playButton.innerHTML =
+      '<span class="material-symbols-outlined" aria-label="Play">play_arrow</span>';
   }
 
   show() {
     if (this._active) {
+      // prompt progression and sound playback
       if (this._diaphram > 99 || this._diaphram < 0) {
         if (!this._inhaling && this._prompt < this._prompts.length - 1) {
           this._prompt++;
@@ -163,19 +169,20 @@ class Torso {
         }
         this._inhaling = !this._inhaling;
       }
+      // lung animation and color change
       if (this._inhaling) {
         this.expandDiaphram();
         this._breathColor = color(
-          this._breathR,
-          this._breathG,
-          this._breathB++,
+          (this._breathR = this._breathR--),
+          (this._breathG = this._breathG + 0.25),
+          (this._breathB = this._breathB + 1),
         );
       } else {
         this.contractDiaphram();
         this._breathColor = color(
-          this._breathR,
-          this._breathG,
-          this._breathB--,
+          (this._breathR = this._breathR++),
+          (this._breathG = this._breathG - 0.25),
+          (this._breathB = this._breathB - 1),
         );
       }
     }
