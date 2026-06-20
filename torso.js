@@ -102,7 +102,7 @@ class Torso {
         '<span class="material-symbols-outlined">volume_up</span>';
     } else {
       soundButton.innerHTML =
-        '<span class="material-symbols-outlined">no_sound</span>';
+        '<span class="material-symbols-outlined">volume_off</span>';
       if (this._currentTrack && this._currentTrack.isPlaying()) {
         this._currentTrack.stop();
       }

@@ -63,7 +63,7 @@
 
     #controlBar {
       display: flex;
-      gap: 2rem;
+      gap: 1rem;
       padding: 0.5rem 2rem;
       justify-content: space-evenly;
       border: 3px solid "black";
@@ -78,7 +78,11 @@
       height: 3rem;
       font-size: large;
       border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
+
     .controlBar__button--primary {
       background-color: var(--brandBlue);
       color: white;

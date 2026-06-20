@@ -37,10 +37,10 @@ function togglePlay() {
   visual.toggleActive();
   if (visual.isActive()) {
     playButton.innerHTML =
-      '<span class="material-symbols-outlined">pause</span> Pause';
+      '<span class="material-symbols-outlined" aria-label="Pause">pause</span>';
   } else {
     playButton.innerHTML =
-      '<span class="material-symbols-outlined">play_arrow</span> Play';
+      '<span class="material-symbols-outlined" aria-label="Play">play_arrow</span>';
   }
 }
 
@@ -51,7 +51,7 @@ function toggleSound() {
 function stop() {
   visual.reset();
   playButton.innerHTML =
-    '<span class="material-symbols-outlined">play_arrow</span> Play';
+    '<span class="material-symbols-outlined" aria-label="Play">play_arrow</span>';
   prompt.innerText = visual.getCaption();
 }
 
