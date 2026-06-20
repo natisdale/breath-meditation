@@ -302,10 +302,11 @@ class Torso {
     endShape();
 
     //Hightlights
-    fill(255, 255, 255, 50);
+    fill(255, 255, 55, 90);
+
     if (this._prompt === 2) {
       // highlight top of head
-      ellipse(525, 50, 150, 20);
+      ellipse(525, 50, 150, 30);
     }
     if (this._prompt === 3) {
       // highlight belly
@@ -313,7 +314,7 @@ class Torso {
     }
     if (this._prompt === 5) {
       //highlight tip of nose
-      ellipse(712, 237, 30, 20);
+      ellipse(710, 237, 44, 30);
     }
     if (this._prompt === 6) {
       //highlight back of throat
