@@ -36,9 +36,11 @@ function draw() {
 function togglePlay() {
   visual.toggleActive();
   if (visual.isActive()) {
-    playButton.innerText = "Pause";
+    playButton.innerHTML =
+      '<span class="material-symbols-outlined">pause</span> Pause';
   } else {
-    playButton.innerText = "Play";
+    playButton.innerHTML =
+      '<span class="material-symbols-outlined">play_arrow</span> Play';
   }
 }
 
@@ -47,8 +49,9 @@ function toggleSound() {
 }
 
 function stop() {
-  playButton.innerText = "Play";
   visual.reset();
+  playButton.innerHTML =
+    '<span class="material-symbols-outlined">play_arrow</span> Play';
   prompt.innerText = visual.getCaption();
 }
 

@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=no_sound,volume_up"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=no_sound,volume_up,play_arrow,pause,stop"
     />
 
     <meta charset="utf-8" />
@@ -26,17 +26,17 @@
           id="playButton"
           onclick="togglePlay()"
         >
-          Start
+          <span class="material-symbols-outlined">play_arrow</span> Start
         </button>
         <button
           class="controlBar__button controlBar__button--secondary"
           id="stopButton"
           onclick="stop()"
         >
-          Stop
+          <span class="material-symbols-outlined">stop</span> Stop
         </button>
         <button
-          class="countrolBar__button--sound"
+          class="controlBar__button controlBar__button--sound"
           id="soundButton"
           onclick="toggleSound()"
         >
