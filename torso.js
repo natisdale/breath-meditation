@@ -80,6 +80,15 @@ class Torso {
   toggleActive() {
     this._active = !this._active;
     stopButton.style.display = "block";
+    if (!this._active && this._currentTrack && this._currentTrack.isPlaying()) {
+      this._currentTrack.pause();
+    } else if (
+      this._active &&
+      this._currentTrack &&
+      this._currentTrack.isPaused()
+    ) {
+      this._currentTrack.play();
+    }
   }
 
   isActive() {
@@ -94,6 +103,9 @@ class Torso {
     } else {
       soundButton.innerHTML =
         '<span class="material-symbols-outlined">no_sound</span>';
+      if (this._currentTrack && this._currentTrack.isPlaying()) {
+        this._currentTrack.stop();
+      }
     }
   }
 
@@ -122,6 +134,9 @@ class Torso {
     this._inhaling = true;
     stopButton.style.display = "none";
     this._breathB = 190;
+    if (this._currentTrack && this._currentTrack.isPlaying()) {
+      this._currentTrack.stop();
+    }
   }
 
   show() {
