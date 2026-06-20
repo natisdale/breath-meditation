@@ -131,6 +131,7 @@ class Torso {
         if (!this._inhaling && this._prompt < this._prompts.length - 1) {
           this._prompt++;
           if (this.soundIsEnabled()) {
+            soundFormats("mp3");
             this._currentTrack = loadSound(
               this._soundFiles[this._prompt],
               () => this._currentTrack.play(),
