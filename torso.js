@@ -27,17 +27,17 @@ class Torso {
       "Rest your attention on the breath, wherever you most feel it in your body at this moment",
       "Begin to notice how the air feels as you inhale and exhale.",
       "Just noticing, without attempting to change your breathing in any way, does it feel slow, or fast?",
-      "Does it feel warm, or cool?", // plays the previus
-      "Does it feel dry, or moist?", // plays the previus
+      "Does it feel warm, or cool?",
+      "Does it feel dry, or moist?",
       "Is it rough or smooth?",
-      "Follow the inhalation.", // dry or moist
-      "And Follow the  exhalation.",
-      "Notice the moment between, before the breath changes direction", // plays follow...
+      "Follow the inhalation.",
+      "And Follow the exhalation.",
+      "Notice the moment between, before the breath changes direction",
       "The moment at the top of the breath.",
       "And the moment at the bottom of the breath.",
       "Continue to follow the rise and fall of the breath.",
       "When you notice your attention has drifted, simply notice, and allow the mind to return to the breath",
-      "Resting your attention on the breath, and the qualities of the breath",
+      "Continue resting your attention on the breath, and the qualities of the breath",
       "Welcome each moment you notice that the mind has wandered, and the ease with which your attention returned without effort.",
       "Continue to follow the breath, allowing for the natural cycle of your mind resting on the breath, wandering away from the breath, and returning.",
       "Now,as you finish this meditation, notice any shift that you may sense in your body, mind, or heart.",
@@ -139,9 +139,9 @@ class Torso {
               (n) => console.log(n),
             );
           }
-        } else {
-          // this._soundEnabled = false;
-          // this.reset();
+        } else ( !this._inhaling && this._prompt >= this._prompts.length - 1 ){
+          this._soundEnabled = false;
+          this.reset();
         }
         this._inhaling = !this._inhaling;
       }
