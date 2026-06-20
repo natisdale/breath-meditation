@@ -17,8 +17,10 @@ let brandSea = "#AACCD6";
 
 function setup() {
   frameRate(40);
-
-  canvasWidth = windowWidth < 250 ? 0.5 * windowWidth : 250;
+  canvasWidth =
+    windowHeight * 0.5 < windowWidth * 0.8
+      ? windowHeight * 0.5
+      : windowWidth * 0.8;
   canvasHeight = canvasWidth;
   let cnv = createCanvas(canvasWidth, canvasHeight);
   cnv.parent("visual");
@@ -52,7 +54,10 @@ function stop() {
 
 // Resize the canvas when the browser's size changes.
 function windowResized() {
-  canvasWidth = windowWidth < 250 ? 0.5 * windowWidth : 250;
+  canvasWidth =
+    windowHeight * 0.5 < windowWidth * 0.8
+      ? windowHeight * 0.5
+      : windowWidth * 0.8;
   canvasHeight = canvasWidth;
   resizeCanvas(canvasWidth, canvasHeight);
 }
