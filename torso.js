@@ -332,7 +332,7 @@ class Torso {
     }
     if (this._prompt === 6) {
       //highlight back of throat
-      ellipse(485, 400, 20, 80);
+      ellipse(490, 400, 30, 100);
     }
     if (this._prompt === 7) {
       //highlight lungs
