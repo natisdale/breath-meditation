@@ -139,7 +139,10 @@ class Torso {
               (n) => console.log(n),
             );
           }
-        } else ( !this._inhaling && this._prompt >= this._prompts.length - 1 ){
+        } else if (
+          !this._inhaling &&
+          this._prompt >= this._prompts.length - 1
+        ) {
           this._soundEnabled = false;
           this.reset();
         }
